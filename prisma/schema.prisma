@@ -1,0 +1,148 @@
+datasource db {
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["fullTextSearch", "fullTextIndex"]
+}
+
+////
+
+model Course {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  title       String  @db.Text //özel karakterler içerebilmesini sağlar
+  userId      String
+  description String? @db.Text
+  imageUrl    String? @db.Text
+  price       Float?
+  isPublished Boolean @default(false)
+
+  attachments Attachment[] @relation("Big-Course-Small-Attachment")
+  chapters    Chapter[]    @relation("Big-Course-Small-Chapter")
+  purchases   Purchase[]   @relation("Big-Course-Small-Purchase")
+
+  categoryId String?
+  category   Category? @relation("Big-Category-Small-Course", fields: [categoryId], references: [id])
+
+  @@index([categoryId])
+  @@fulltext([title])
+}
+
+////
+
+model Category {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  name String @unique
+
+  courses Course[] @relation("Big-Category-Small-Course")
+}
+
+////
+
+model Attachment {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  name String
+  url  String @db.Text
+
+  courseId String
+  course   Course @relation("Big-Course-Small-Attachment", fields: [courseId], references: [id], onDelete: Cascade)
+  //onDelete: Cascade -> Course silindiğinde Attachment'lar da silinsin
+
+  @@index([courseId])
+}
+
+////
+
+model Chapter {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  title       String
+  description String? @db.Text
+  videoUrl    String? @db.Text
+  position    Int
+  isPublished Boolean @default(false)
+  isFree      Boolean @default(false)
+
+  muxData MuxData? @relation("Big-Chapter-Small-MuxData")
+
+  userProgresses UserProgress[] @relation("Big-Chapter-Small-UserProgress")
+
+  courseId String
+  course   Course @relation("Big-Course-Small-Chapter", fields: [courseId], references: [id], onDelete: Cascade)
+
+  @@index([courseId])
+}
+
+////
+
+model MuxData {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  assetId    String
+  playbackId String?
+
+  chapterId String  @unique
+  chapter   Chapter @relation("Big-Chapter-Small-MuxData", fields: [chapterId], references: [id], onDelete: Cascade)
+
+  @@index([chapterId])
+}
+
+////
+
+model UserProgress {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  userId      String
+  isCompleted Boolean @default(false)
+
+  chapterId String
+  chapter   Chapter @relation("Big-Chapter-Small-UserProgress", fields: [chapterId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, chapterId]) //bir kullanıcı bir bölümü birden fazla tamamlayamaz
+  @@index([chapterId])
+}
+
+////
+
+model Purchase {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  userId String
+
+  courseId String
+  course   Course @relation("Big-Course-Small-Purchase", fields: [courseId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, courseId]) //bir kullanıcı bir kursu birden fazla satın alamaz
+  @@index([courseId])
+}
+
+////
+
+model StripeCustomer {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  userId           String @unique
+  stripeCustomerId String @unique
+}
