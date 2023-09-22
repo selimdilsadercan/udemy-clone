@@ -72,7 +72,7 @@ const ChapterForm = ({ initialData }: Props) => {
       toast.error("Failed to create chapter");
     },
     onSuccess: () => {
-      form.reset({ title: "" });
+      form.resetField("title");
       toast.success("Chapter created");
       toggleCreating();
       router.refresh();
