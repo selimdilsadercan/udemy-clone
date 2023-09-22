@@ -1,11 +1,7 @@
 import { ClerkProvider as ClerkProviderRow } from "@clerk/nextjs";
 
-interface Props {
-  children: React.ReactNode;
-}
-
-const ClerkProvider = ({ children }: Props) => {
+function ClerkProvider({ children }: { children: React.ReactNode }) {
   return <ClerkProviderRow>{children}</ClerkProviderRow>;
-};
+}
 
 export default ClerkProvider;

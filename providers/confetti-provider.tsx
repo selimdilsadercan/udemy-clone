@@ -3,7 +3,7 @@
 import { useConfetti } from "@/hooks/use-confetti";
 import ReactConfetti from "react-confetti";
 
-const ConfettiProvider = ({}) => {
+function ConfettiProvider() {
   const confetti = useConfetti();
 
   if (!confetti.isOpen) return null;
@@ -16,6 +16,6 @@ const ConfettiProvider = ({}) => {
       onConfettiComplete={() => confetti.onClose()}
     />
   );
-};
+}
 
 export default ConfettiProvider;
