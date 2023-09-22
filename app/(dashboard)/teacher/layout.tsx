@@ -6,12 +6,12 @@ interface Props {
   children: React.ReactNode;
 }
 
-const Layout = ({ children }: Props) => {
+function Layout({ children }: Props) {
   //teacher control
   const { userId } = auth();
   if (!isTeacher(userId)) redirect("/");
 
   return <>{children}</>;
-};
+}
 
 export default Layout;

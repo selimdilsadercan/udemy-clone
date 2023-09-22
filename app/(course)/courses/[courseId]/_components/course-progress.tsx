@@ -17,7 +17,7 @@ const sizeOptions = {
   sm: "text-xs",
 };
 
-const CourseProgress = ({ variant, size, value }: Props) => {
+function CourseProgress({ variant, size, value }: Props) {
   return (
     <div>
       <Progress className="h-2" value={value} variant={variant} />
@@ -33,6 +33,6 @@ const CourseProgress = ({ variant, size, value }: Props) => {
       </p>
     </div>
   );
-};
+}
 
 export default CourseProgress;

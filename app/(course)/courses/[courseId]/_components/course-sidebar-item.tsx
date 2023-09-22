@@ -13,7 +13,7 @@ interface Props {
 }
 
 //prettier-ignore
-const CourseSidebarItem = ({id, label, isCompleted, courseId, isLocked }: Props) => {
+function CourseSidebarItem({id, label, isCompleted, courseId, isLocked }: Props) {
   //hooks
   const router = useRouter();
   const pathname = usePathname();
@@ -57,6 +57,6 @@ const CourseSidebarItem = ({id, label, isCompleted, courseId, isLocked }: Props)
       )} />
     </button>
   );
-};
+}
 
 export default CourseSidebarItem;

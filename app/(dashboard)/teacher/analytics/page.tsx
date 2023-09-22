@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 import DataCard from "./_components/data-card";
 import Chart from "./_components/chart";
 
-const Page = async () => {
+async function Page() {
   //authentication control
   const { userId } = auth();
   if (!userId) redirect("/");
@@ -23,6 +23,6 @@ const Page = async () => {
       <Chart data={data} />
     </div>
   );
-};
+}
 
 export default Page;

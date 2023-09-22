@@ -12,7 +12,7 @@ export const metadata = {
   description: "another clone with nextjs",
 };
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className={font.className}>
@@ -27,3 +27,5 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     </html>
   );
 }
+
+export default Layout;

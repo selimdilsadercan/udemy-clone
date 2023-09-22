@@ -12,7 +12,7 @@ interface Props {
   progressCount: number;
 }
 
-const CourseSidebar = async ({ course, progressCount }: Props) => {
+async function CourseSidebar({ course, progressCount }: Props) {
   //authentication control
   const { userId } = auth();
   if (!userId) redirect("/");
@@ -47,6 +47,6 @@ const CourseSidebar = async ({ course, progressCount }: Props) => {
       </div>
     </div>
   );
-};
+}
 
 export default CourseSidebar;

@@ -14,7 +14,7 @@ interface Props {
   chapter: Chapter;
 }
 
-const ChapterActions = ({ chapter, disabled }: Props) => {
+function ChapterActions({ chapter, disabled }: Props) {
   //params
   const courseId = chapter.courseId;
   const chapterId = chapter.id;
@@ -77,6 +77,6 @@ const ChapterActions = ({ chapter, disabled }: Props) => {
       </ConfirmModal>
     </div>
   );
-};
+}
 
 export default ChapterActions;

@@ -37,7 +37,7 @@ interface Props {
   initialData: Chapter;
 }
 
-const ChapterAccesssForm = ({ initialData }: Props) => {
+function ChapterAccesssForm({ initialData }: Props) {
   //params
   const courseId = initialData.courseId;
   const chapterId = initialData.id;
@@ -154,6 +154,6 @@ const ChapterAccesssForm = ({ initialData }: Props) => {
       )}
     </div>
   );
-};
+}
 
 export default ChapterAccesssForm;

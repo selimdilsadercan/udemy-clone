@@ -5,7 +5,7 @@ import { CheckCircle, Clock } from "lucide-react";
 import { redirect } from "next/navigation";
 import InfoCard from "./_components/info-card";
 
-const Page = async () => {
+async function Page() {
   //authantication control
   const { userId } = auth();
   if (!userId) return redirect("/");
@@ -35,6 +35,6 @@ const Page = async () => {
       <CoursesList courses={allCourses} />
     </div>
   );
-};
+}
 
 export default Page;

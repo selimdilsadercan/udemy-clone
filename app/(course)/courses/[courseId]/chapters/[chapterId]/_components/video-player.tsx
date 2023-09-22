@@ -21,7 +21,7 @@ interface Props {
 }
 
 //prettier-ignore
-const VideoPlayer = ({ chapterId, completeOnEnd, courseId, isLocked, nextChapterId, playbackId, title }: Props) => {
+function VideoPlayer({ chapterId, completeOnEnd, courseId, isLocked, nextChapterId, playbackId, title }: Props) {
   //hooks
   const [isReady, setIsReady] = useState<boolean>(false);
   const router = useRouter(); 
@@ -76,6 +76,6 @@ const VideoPlayer = ({ chapterId, completeOnEnd, courseId, isLocked, nextChapter
       )}
     </div>
   )
-};
+}
 
 export default VideoPlayer;

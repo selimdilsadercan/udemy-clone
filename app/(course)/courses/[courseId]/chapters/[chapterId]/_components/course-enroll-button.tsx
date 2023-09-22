@@ -13,7 +13,7 @@ interface Props {
   price: number;
 }
 
-const CourseEnrollButton = ({ courseId, price }: Props) => {
+function CourseEnrollButton({ courseId, price }: Props) {
   //enroll course
   const { mutate: createCourse, isLoading: isEnrolling } = useMutation({
     mutationFn: async () => {
@@ -39,6 +39,6 @@ const CourseEnrollButton = ({ courseId, price }: Props) => {
       Enroll for {format(price)}
     </Button>
   );
-};
+}
 
 export default CourseEnrollButton;

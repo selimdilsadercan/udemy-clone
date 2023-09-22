@@ -38,7 +38,7 @@ interface Props {
   initialData: Course;
 }
 
-const PriceForm = ({ initialData }: Props) => {
+function PriceForm({ initialData }: Props) {
   //params
   const courseId = initialData.id;
 
@@ -140,6 +140,6 @@ const PriceForm = ({ initialData }: Props) => {
       )}
     </div>
   );
-};
+}
 
 export default PriceForm;

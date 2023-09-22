@@ -1,13 +1,9 @@
-interface Props {
-  children: React.ReactNode;
-}
-
-const AuthLayout = ({ children }: Props) => {
+function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex items-center justify-center w-full h-full">
       {children}
     </div>
   );
-};
+}
 
-export default AuthLayout;
+export default Layout;

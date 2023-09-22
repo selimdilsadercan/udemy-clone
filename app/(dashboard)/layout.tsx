@@ -5,7 +5,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-const Layout = ({ children }: Props) => {
+function Layout({ children }: Props) {
   return (
     <div className="h-full">
       <div className="h-[80px] md:pl-56 fixed inset-y-0 w-full z-50">
@@ -19,6 +19,6 @@ const Layout = ({ children }: Props) => {
       <main className="md:pl-56 h-full pt-[80px]">{children}</main>
     </div>
   );
-};
+}
 
 export default Layout;

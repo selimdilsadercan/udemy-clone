@@ -15,7 +15,7 @@ interface Props {
   params: { courseId: string; chapterId: string };
 }
 
-const Page = async ({ params }: Props) => {
+async function Page({ params }: Props) {
   //params
   const courseId = params.courseId;
   const chapterId = params.chapterId;
@@ -108,6 +108,6 @@ const Page = async ({ params }: Props) => {
       </div>
     </>
   );
-};
+}
 
 export default Page;

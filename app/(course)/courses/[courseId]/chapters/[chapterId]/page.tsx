@@ -13,7 +13,7 @@ interface Props {
   params: { courseId: string; chapterId: string };
 }
 
-const Page = async ({ params }: Props) => {
+async function Page({ params }: Props) {
   //authentication control
   const { userId } = auth();
   if (!userId) redirect("/");
@@ -95,6 +95,6 @@ const Page = async ({ params }: Props) => {
       </div>
     </div>
   );
-};
+}
 
 export default Page;

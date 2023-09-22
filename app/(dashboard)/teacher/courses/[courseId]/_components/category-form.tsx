@@ -38,7 +38,7 @@ interface Props {
   options: { label: string; value: string }[];
 }
 
-const CategoryForm = ({ initialData, options }: Props) => {
+function CategoryForm({ initialData, options }: Props) {
   //hooks
   const router = useRouter();
   const [isEditing, setIsEditing] = useState<Boolean>(false);
@@ -139,6 +139,6 @@ const CategoryForm = ({ initialData, options }: Props) => {
       )}
     </div>
   );
-};
+}
 
 export default CategoryForm;

@@ -25,7 +25,7 @@ interface Props {
   initialData: Chapter & { muxData?: MuxData | null };
 }
 
-const ChapterVideoForm = ({ initialData }: Props) => {
+function ChapterVideoForm({ initialData }: Props) {
   //params
   const courseId = initialData.courseId;
   const chapterId = initialData.id;
@@ -114,6 +114,6 @@ const ChapterVideoForm = ({ initialData }: Props) => {
       )}
     </div>
   );
-};
+}
 
 export default ChapterVideoForm;

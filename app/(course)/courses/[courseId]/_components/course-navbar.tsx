@@ -8,13 +8,13 @@ interface Props {
   progressCount: number;
 }
 
-const CourseNavbar = ({ course, progressCount }: Props) => {
+function CourseNavbar({ course, progressCount }: Props) {
   return (
     <div className="p-4 border-b h-full flex items-center bg-white shadow-sm">
       <CourseMobileSidebar course={course} progressCount={progressCount} />
       <NavbarRoutes />
     </div>
   );
-};
+}
 
 export default CourseNavbar;

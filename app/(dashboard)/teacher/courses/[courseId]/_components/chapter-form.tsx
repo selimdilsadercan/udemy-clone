@@ -37,7 +37,7 @@ interface Props {
   initialData: Course & { chapters: Chapter[] };
 }
 
-const ChapterForm = ({ initialData }: Props) => {
+function ChapterForm({ initialData }: Props) {
   //params
   const courseId = initialData.id;
 
@@ -182,6 +182,6 @@ const ChapterForm = ({ initialData }: Props) => {
       )}
     </div>
   );
-};
+}
 
 export default ChapterForm;

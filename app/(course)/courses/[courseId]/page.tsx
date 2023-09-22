@@ -8,7 +8,7 @@ interface Props {
   params: { courseId: string };
 }
 
-const Page = async ({ params }: Props) => {
+async function Page({ params }: Props) {
   //authentication control
   const { userId } = auth();
   if (!userId) redirect("/");
@@ -30,6 +30,6 @@ const Page = async ({ params }: Props) => {
   /////
 
   return redirect(`/courses/${courseId}/chapters/${course.chapters[0].id}`);
-};
+}
 
 export default Page;

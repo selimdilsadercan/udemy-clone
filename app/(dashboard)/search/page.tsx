@@ -12,7 +12,7 @@ interface Props {
   searchParams: { tile: string; categoryId: string };
 }
 
-const Page = async ({ searchParams }: Props) => {
+async function Page({ searchParams }: Props) {
   //authentication control
   const { userId } = auth();
   if (!userId) return redirect("/");
@@ -37,6 +37,6 @@ const Page = async ({ searchParams }: Props) => {
       </div>
     </>
   );
-};
+}
 
 export default Page;

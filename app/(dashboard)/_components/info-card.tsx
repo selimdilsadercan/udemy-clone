@@ -8,7 +8,7 @@ interface Props {
   variant?: "default" | "success";
 }
 
-const InfoCard = ({ icon: Icon, variant, label, numberOfItems }: Props) => {
+function InfoCard({ icon: Icon, variant, label, numberOfItems }: Props) {
   return (
     <div className="border rounded-md flex items-center gap-x-2 p-3">
       <IconBadge variant={variant} icon={Icon} />
@@ -20,6 +20,6 @@ const InfoCard = ({ icon: Icon, variant, label, numberOfItems }: Props) => {
       </div>
     </div>
   );
-};
+}
 
 export default InfoCard;

@@ -3,11 +3,13 @@
 import { Card } from "@/components/ui/card";
 import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
 
+////
+
 interface Props {
   data: { name: string; total: number }[];
 }
 
-const Chart = ({ data }: Props) => {
+function Chart({ data }: Props) {
   return (
     <Card>
       <ResponsiveContainer width="100%" height={350}>
@@ -31,6 +33,6 @@ const Chart = ({ data }: Props) => {
       </ResponsiveContainer>
     </Card>
   );
-};
+}
 
 export default Chart;

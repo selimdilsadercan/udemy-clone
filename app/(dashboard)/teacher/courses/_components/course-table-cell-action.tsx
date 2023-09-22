@@ -11,7 +11,7 @@ interface Props {
   courseId: string;
 }
 
-const CourseCellAction = ({ courseId }: Props) => {
+function CourseCellAction({ courseId }: Props) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -30,6 +30,6 @@ const CourseCellAction = ({ courseId }: Props) => {
       </DropdownMenuContent>
     </DropdownMenu>
   );
-};
+}
 
 export default CourseCellAction;

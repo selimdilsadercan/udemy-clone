@@ -20,7 +20,7 @@ interface Props {
   onEdit: (chapterId: string) => void;
 }
 
-const ChaptersList = ({ items, onReorder, onEdit }: Props) => {
+function ChaptersList({ items, onReorder, onEdit }: Props) {
   //hooks
   const [isMounted, setIsMounted] = useState<Boolean>(false);
   const [chapters, setChapters] = useState<Chapter[]>(items);
@@ -120,6 +120,6 @@ const ChaptersList = ({ items, onReorder, onEdit }: Props) => {
       </Droppable>
     </DragDropContext>
   );
-};
+}
 
 export default ChaptersList;

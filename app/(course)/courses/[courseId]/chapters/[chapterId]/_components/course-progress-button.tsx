@@ -18,7 +18,7 @@ interface Props {
 }
 
 //prettier-ignore
-const CourseProgressButton = ({ courseId, chapterId, nextChapterId, isCompleted }: Props) => {
+function CourseProgressButton({ courseId, chapterId, nextChapterId, isCompleted }: Props) {
   //hooks
   const router = useRouter();
   const confetti = useConfetti();
@@ -55,6 +55,6 @@ const CourseProgressButton = ({ courseId, chapterId, nextChapterId, isCompleted 
       <Icon className="h-4 w-4 ml-2"/>
     </Button>
   );
-};
+}
 
 export default CourseProgressButton;

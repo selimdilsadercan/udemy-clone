@@ -13,7 +13,7 @@ interface Props {
   value: string;
 }
 
-const CategoryItem = ({ label, value, icon: Icon }: Props) => {
+function CategoryItem({ label, value, icon: Icon }: Props) {
   //hooks
   const pathname = usePathname();
   const router = useRouter();
@@ -50,6 +50,6 @@ const CategoryItem = ({ label, value, icon: Icon }: Props) => {
       <div className="truncate">{label}</div>
     </button>
   );
-};
+}
 
 export default CategoryItem;

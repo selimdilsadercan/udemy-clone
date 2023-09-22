@@ -12,7 +12,7 @@ interface Props {
   params: { courseId: string };
 }
 
-const Layout = async ({ children, params }: Props) => {
+async function Layout({ children, params }: Props) {
   //authentication control
   const { userId } = auth();
   if (!userId) return redirect("/");
@@ -50,6 +50,6 @@ const Layout = async ({ children, params }: Props) => {
       <main className="md:pl-80 pt-[80px] h-full">{children}</main>
     </div>
   );
-};
+}
 
 export default Layout;

@@ -31,7 +31,7 @@ type Event = React.FormEvent<HTMLFormElement>;
 
 ////
 
-const Page = () => {
+function Page() {
   //form
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -120,6 +120,6 @@ const Page = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Page;

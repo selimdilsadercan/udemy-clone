@@ -30,7 +30,7 @@ const guestRoutes = [
   },
 ];
 
-const SidebarRoutes = () => {
+function SidebarRoutes() {
   const pathname = usePathname();
   const isTeacherPage = pathname?.includes("/teacher");
 
@@ -48,6 +48,6 @@ const SidebarRoutes = () => {
       ))}
     </div>
   );
-};
+}
 
 export default SidebarRoutes;

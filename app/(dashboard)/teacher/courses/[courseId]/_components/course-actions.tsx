@@ -17,7 +17,7 @@ interface Props {
   course: Course;
 }
 
-const CourseActions = ({ course, disabled }: Props) => {
+function CourseActions({ course, disabled }: Props) {
   //params
   const courseId = course.id;
   const isPublished = course.isPublished;
@@ -79,6 +79,6 @@ const CourseActions = ({ course, disabled }: Props) => {
       </ConfirmModal>
     </div>
   );
-};
+}
 
 export default CourseActions;

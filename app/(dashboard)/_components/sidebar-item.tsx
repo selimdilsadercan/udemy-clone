@@ -3,13 +3,15 @@ import { LucideIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
+////
+
 interface Props {
   icon: LucideIcon;
   label: string;
   href: string;
 }
 
-const SidebarItem = ({ icon: Icon, label, href }: Props) => {
+function SidebarItem({ icon: Icon, label, href }: Props) {
   const pathname = usePathname();
   const router = useRouter();
 
@@ -48,6 +50,6 @@ const SidebarItem = ({ icon: Icon, label, href }: Props) => {
       />
     </button>
   );
-};
+}
 
 export default SidebarItem;

@@ -22,7 +22,7 @@ interface Props {
   initialData: Course & { attachments: Attachment[] };
 }
 
-const AttachmentForm = ({ initialData }: Props) => {
+function AttachmentForm({ initialData }: Props) {
   //params
   const courseId = initialData.id;
 
@@ -143,6 +143,6 @@ const AttachmentForm = ({ initialData }: Props) => {
       )}
     </div>
   );
-};
+}
 
 export default AttachmentForm;

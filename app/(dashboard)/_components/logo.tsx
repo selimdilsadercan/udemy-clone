@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const Logo = () => {
+function Logo() {
   return (
     <Image
       alt="logo"
@@ -11,6 +11,6 @@ const Logo = () => {
       sizes="(height: auto)"
     />
   );
-};
+}
 
 export default Logo;

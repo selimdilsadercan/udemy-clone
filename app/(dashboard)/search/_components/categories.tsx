@@ -23,7 +23,7 @@ interface Props {
   categories: Category[];
 }
 
-const Categories = ({ categories }: Props) => {
+function Categories({ categories }: Props) {
   return (
     <div className="flex items-center gap-x-2 overflow-x-auto pb-2">
       {categories.map((category) => (
@@ -36,6 +36,6 @@ const Categories = ({ categories }: Props) => {
       ))}
     </div>
   );
-};
+}
 
 export default Categories;

@@ -8,7 +8,7 @@ interface Props {
   progressCount: number;
 }
 
-const CourseMobileSidebar = ({ course, progressCount }: Props) => {
+function CourseMobileSidebar({ course, progressCount }: Props) {
   return (
     <Sheet>
       <SheetTrigger className="md:hidden pr-4 hover:opacity-75 transition">
@@ -19,6 +19,6 @@ const CourseMobileSidebar = ({ course, progressCount }: Props) => {
       </SheetContent>
     </Sheet>
   );
-};
+}
 
 export default CourseMobileSidebar;

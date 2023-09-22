@@ -26,7 +26,7 @@ interface Props {
   initialData: Course;
 }
 
-const ImageForm = ({ initialData }: Props) => {
+function ImageForm({ initialData }: Props) {
   //params
   const courseId = initialData.id;
 
@@ -110,6 +110,6 @@ const ImageForm = ({ initialData }: Props) => {
       )}
     </div>
   );
-};
+}
 
 export default ImageForm;

@@ -35,7 +35,7 @@ interface Props {
   initialData: Chapter;
 }
 
-const ChapterTitleForm = ({ initialData }: Props) => {
+function ChapterTitleForm({ initialData }: Props) {
   //params
   const courseId = initialData.courseId;
   const chapterId = initialData.id;
@@ -133,6 +133,6 @@ const ChapterTitleForm = ({ initialData }: Props) => {
       )}
     </div>
   );
-};
+}
 
 export default ChapterTitleForm;

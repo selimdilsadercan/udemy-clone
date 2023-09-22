@@ -6,7 +6,7 @@ import { auth } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 import db from "@/lib/db";
 
-const Page = async () => {
+async function Page() {
   //authentication control
   const { userId } = auth();
   if (!userId) redirect("/");
@@ -22,6 +22,6 @@ const Page = async () => {
       <DataTable columns={columns} data={courses} />
     </div>
   );
-};
+}
 
 export default Page;

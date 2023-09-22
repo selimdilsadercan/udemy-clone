@@ -35,7 +35,7 @@ interface Props {
   initialData: Course;
 }
 
-const TitleForm = ({ initialData }: Props) => {
+function TitleForm({ initialData }: Props) {
   //hooks
   const router = useRouter();
   const [isEditing, setIsEditing] = useState<Boolean>(false);
@@ -127,6 +127,6 @@ const TitleForm = ({ initialData }: Props) => {
       )}
     </div>
   );
-};
+}
 
 export default TitleForm;

@@ -39,7 +39,7 @@ export const columns: ColumnDef<Course>[] = [
 ////
 
 //prettier-ignore
-const SortedHeader = ({ column, text }: { column: Column<Course>; text: string }) => { 
+function SortedHeader({ column, text }: { column: Column<Course>; text: string }) { 
   return (
     //prettier-ignore
     <Button variant="ghost" onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}>
@@ -47,11 +47,11 @@ const SortedHeader = ({ column, text }: { column: Column<Course>; text: string }
       <ArrowUpDown className="ml-2 h-4 w-4" />
     </Button>
   );
-};
+}
 
 ////
 
-const PublishCell = ({ row }: { row: Row<Course> }) => {
+function PublishCell({ row }: { row: Row<Course> }) {
   const isPublished = row.getValue("isPublished") || false;
 
   return (
@@ -61,19 +61,19 @@ const PublishCell = ({ row }: { row: Row<Course> }) => {
       </Badge>
     </div>
   );
-};
+}
 
 ////
 
-const DollarCell = ({ row }: { row: Row<Course> }) => {
+function DollarCell({ row }: { row: Row<Course> }) {
   const price = parseFloat(row.getValue("price") || "0");
   const formatted = format(price);
 
   return <div className="px-4">{formatted}</div>;
-};
+}
 
 ////
 
-const TitleCell = ({ row }: { row: Row<Course> }) => {
+function TitleCell({ row }: { row: Row<Course> }) {
   return <div className="px-4">{row.getValue("title")}</div>;
-};
+}
