@@ -8,15 +8,15 @@ import {
   ListChecks,
 } from "lucide-react";
 import { redirect } from "next/navigation";
-import DescriptionForm from "./_components/descripiton-form";
-import TitleForm from "./_components/title-form";
-import ImageForm from "./_components/image-form";
-import CategoryForm from "./_components/category-form";
-import PriceForm from "./_components/price-form";
-import AttachmentForm from "./_components/attachment-form";
-import ChapterForm from "./_components/chapter-form";
+import DescriptionForm from "./zomponents/descripiton-form";
+import TitleForm from "./zomponents/title-form";
+import ImageForm from "./zomponents/image-form";
+import CategoryForm from "./zomponents/category-form";
+import PriceForm from "./zomponents/price-form";
+import AttachmentForm from "./zomponents/attachment-form";
+import ChapterForm from "./zomponents/chapter-form";
 import Banner from "@/components/banner";
-import CourseActions from "./_components/course-actions";
+import CourseActions from "./zomponents/course-actions";
 
 interface Props {
   params: { courseId: string };

@@ -2,12 +2,12 @@ import Banner from "@/components/banner";
 import { getChapter } from "@/helpers/get-chapter";
 import { auth } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
-import VideoPlayer from "./_components/video-player";
-import CourseEnrollButton from "./_components/course-enroll-button";
+import VideoPlayer from "./zomponents/video-player";
+import CourseEnrollButton from "./zomponents/course-enroll-button";
 import { Separator } from "@/components/ui/separator";
 import Preview from "@/components/preview";
 import { File } from "lucide-react";
-import CourseProgressButton from "./_components/course-progress-button";
+import CourseProgressButton from "./zomponents/course-progress-button";
 
 interface Props {
   params: { courseId: string; chapterId: string };

@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import { getCourses } from "@/helpers/get-courses";
 import { auth } from "@clerk/nextjs";
-import Categories from "./_components/categories";
+import Categories from "./zomponents/categories";
 import SearchInput from "@/components/nav/search-input";
 import CoursesList from "@/components/courses-list";
 import db from "@/lib/db";

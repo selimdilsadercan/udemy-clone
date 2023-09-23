@@ -1,8 +1,8 @@
 import { getAnalytics } from "@/helpers/get-analytics";
 import { auth } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
-import DataCard from "./_components/data-card";
-import Chart from "./_components/chart";
+import DataCard from "./zomponents/data-card";
+import Chart from "./zomponents/chart";
 
 async function Page() {
   //authentication control

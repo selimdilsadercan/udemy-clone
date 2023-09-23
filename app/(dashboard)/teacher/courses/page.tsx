@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { DataTable } from "@/components/ui/data-table";
 import Link from "next/link";
-import { columns } from "./_components/course-table-columns";
+import { columns } from "./zomponents/course-table-columns";
 import { auth } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 import db from "@/lib/db";

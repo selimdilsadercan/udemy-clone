@@ -4,12 +4,12 @@ import { auth } from "@clerk/nextjs";
 import { ArrowLeft, Eye, LayoutDashboard, Video } from "lucide-react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import ChapterTitleForm from "./_components/chapter-title-form";
-import ChapterDescriptionForm from "./_components/chapter-description-form";
-import ChapterAccesssForm from "./_components/chapter-access-form";
-import ChapterVideoForm from "./_components/chapter-video-form";
+import ChapterTitleForm from "./zomponents/chapter-title-form";
+import ChapterDescriptionForm from "./zomponents/chapter-description-form";
+import ChapterAccesssForm from "./zomponents/chapter-access-form";
+import ChapterVideoForm from "./zomponents/chapter-video-form";
 import Banner from "@/components/banner";
-import ChapterActions from "./_components/chapter-actions";
+import ChapterActions from "./zomponents/chapter-actions";
 
 interface Props {
   params: { courseId: string; chapterId: string };
