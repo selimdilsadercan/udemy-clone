@@ -1,8 +1,8 @@
 import { auth } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 import { getProgress } from "@/helpers/get-progress";
-import CourseNavbar from "./_components/course-navbar";
-import CourseSidebar from "./_components/course-sidebar";
+import CourseNavbar from "./zomponents/course-navbar";
+import CourseSidebar from "./zomponents/course-sidebar";
 import db from "@/lib/db";
 
 ////

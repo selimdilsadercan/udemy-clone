@@ -1,5 +1,5 @@
-import Navbar from "./_components/navbar";
-import Sidebar from "./_components/sidebar";
+import Navbar from "./zomponents/navbar";
+import Sidebar from "./zomponents/sidebar";
 
 interface Props {
   children: React.ReactNode;

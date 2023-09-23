@@ -15,7 +15,7 @@ interface Props {
   onConfirm: () => void;
 }
 
-const ConfirmModal = ({ children, onConfirm }: Props) => {
+function ConfirmModal({ children, onConfirm }: Props) {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>{children}</AlertDialogTrigger>
@@ -37,6 +37,6 @@ const ConfirmModal = ({ children, onConfirm }: Props) => {
       </AlertDialogContent>
     </AlertDialog>
   );
-};
+}
 
 export default ConfirmModal;

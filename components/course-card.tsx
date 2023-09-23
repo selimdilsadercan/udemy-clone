@@ -5,7 +5,7 @@ import Link from "next/link";
 import IconBadge from "./icon-badge";
 import { BookOpen } from "lucide-react";
 import { format } from "@/lib/format";
-import CourseProgress from "@/app/(course)/courses/[courseId]/_components/course-progress";
+import CourseProgress from "@/app/(course)/courses/[courseId]/zomponents/course-progress";
 
 interface Props {
   id: string;

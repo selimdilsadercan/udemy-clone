@@ -3,7 +3,7 @@ import { getDashboard } from "@/helpers/get-dashboard";
 import { auth } from "@clerk/nextjs";
 import { CheckCircle, Clock } from "lucide-react";
 import { redirect } from "next/navigation";
-import InfoCard from "./_components/info-card";
+import InfoCard from "./zomponents/info-card";
 
 async function Page() {
   //authantication control
