@@ -9,7 +9,7 @@ interface Props {
 const CoursesList = ({ courses }: Props) => {
   return (
     <div>
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-4">
+      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
         {courses.map((course: ExtendedCourse) => (
           <CourseCard
             key={course.id}
@@ -22,13 +22,12 @@ const CoursesList = ({ courses }: Props) => {
             category={course?.category?.name!}
           />
         ))}
-
-        {courses.length === 0 && (
-          <div className="text-center text-sm text-muted-foreground mt-10">
-            No courses found. Try changing your search parameters.
-          </div>
-        )}
       </div>
+      {courses.length === 0 && (
+        <div className="w-full mt-10 text-sm text-center text-muted-foreground">
+          No courses found. Try changing your search parameters.
+        </div>
+      )}
     </div>
   );
 };
