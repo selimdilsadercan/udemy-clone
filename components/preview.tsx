@@ -8,16 +8,11 @@ interface Props {
   value: string;
 }
 
-const Preview = ({ value }: Props) => {
+function Preview({ value }: Props) {
   //hydration issue
-  const ReactQuill = useMemo(
-    () => dynamic(() => import("react-quill"), { ssr: false }),
-    []
-  );
-
-  ////
+  const ReactQuill = useMemo(() => dynamic(() => import("react-quill"), { ssr: false }), []);
 
   return <ReactQuill theme="bubble" value={value} readOnly />;
-};
+}
 
-export default Preview;
+x
