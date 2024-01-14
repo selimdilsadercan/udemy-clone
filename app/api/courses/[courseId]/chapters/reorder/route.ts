@@ -26,7 +26,7 @@ export async function PUT(req: Request, params: Param) {
 
     //authorization control
     const courseOwner = await db.course.findUnique({
-      where: { id: courseId, userId },
+      where: { id: courseId, userId }
     });
     if (!courseOwner) {
       return new NextResponse("Unauthorized", { status: 403 });
@@ -36,7 +36,7 @@ export async function PUT(req: Request, params: Param) {
     for (let item of list) {
       await db.chapter.update({
         where: { id: item.id },
-        data: { position: item.position },
+        data: { position: item.position }
       });
     }
 
